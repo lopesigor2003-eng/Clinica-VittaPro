@@ -111,7 +111,7 @@
     <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent h-20 flex items-center">
         <div class="container mx-auto px-6 flex justify-between items-center">
             <a href="#" class="h-10 flex items-center">
-                <img src="https://i.postimg.cc/tJjxGk97/Whats-App-Image-2026-04-28-at-17-21-48-(10).jpg" alt="VittaPro Logo" class="h-full brightness-125">
+                <img src="https://i.postimg.cc/pV1wdnzc/a6b80546-55cf-4e7a-96a4-db7cbd6a5a1d-removebg-preview.png" alt="VittaPro Logo" class="h-full brightness-125">
             </a>
             <div class="hidden lg:flex items-center gap-10">
                 <a href="#inicio" class="text-[10px] font-bold uppercase tracking-[0.25em] text-white/50 hover:text-brand-blue transition-colors">Início</a>
@@ -140,7 +140,7 @@
             <div class="container mx-auto px-6 relative z-10">
                 <div class="max-w-5xl mx-auto flex flex-col items-center">
                     <div class="reveal mb-12">
-                        <img src="https://i.postimg.cc/tJjxGk97/Whats-App-Image-2026-04-28-at-17-21-48-(10).jpg" alt="VittaPro Logo" class="h-32 md:h-52 brightness-125 drop-shadow-[0_0_30px_rgba(0,191,255,0.3)]">
+                        <img src="https://i.postimg.cc/pV1wdnzc/a6b80546-55cf-4e7a-96a4-db7cbd6a5a1d-removebg-preview.png" alt="VittaPro Logo" class="h-40 md:h-64 brightness-125 drop-shadow-[0_0_30px_rgba(0,191,255,0.3)] overflow-hidden">
                     </div>
 
                     <div class="reveal inline-flex items-center gap-3 mb-8">
@@ -354,31 +354,59 @@
             </div>
         </section>
 
-        <!-- Team Section -->
+        <!-- Team & Space Section -->
         <section id="equipe" class="py-24 bg-brand-charcoal/20 overflow-hidden text-center">
             <div class="container mx-auto px-6">
-                <div class="text-center max-w-2xl mx-auto mb-16">
-                    <div class="reveal">
-                        <span class="section-label">NOSSA EQUIPE TÉCNICA</span>
-                        <h2 class="text-3xl md:text-5xl mb-4 leading-tight">
-                            Especialistas em <span class="neon-text">Ação</span>
-                        </h2>
+                <div class="grid lg:grid-cols-2 gap-16">
+                    <!-- Team Carousel -->
+                    <div class="flex flex-col">
+                        <div class="reveal mb-12">
+                            <span class="section-label">NOSSA EQUIPE TÉCNICA</span>
+                            <h2 class="text-2xl md:text-4xl mb-4 leading-tight">
+                                Especialistas em <span class="neon-text">Ação</span>
+                            </h2>
+                        </div>
+
+                        <div class="relative w-full group">
+                            <div class="relative overflow-hidden glass border-white/10 shadow-2xl aspect-[4/5] sm:aspect-square lg:aspect-[4/5] flex items-center justify-center">
+                                <img id="team-image" src="https://i.postimg.cc/5ySF4z0b/Whats-App-Image-2026-04-28-at-17-27-53.jpg" alt="Membro da Equipe" class="w-full h-full object-contain">
+                            </div>
+
+                            <button id="prev-team" class="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 md:w-10 md:h-10 glass border-white/20 flex items-center justify-center text-brand-blue hover:neon-border transition-all opacity-0 group-hover:opacity-100 z-10">
+                                <i data-lucide="chevron-left" class="w-5 h-5 md:w-6 md:h-6"></i>
+                            </button>
+                            <button id="next-team" class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 md:w-10 md:h-10 glass border-white/20 flex items-center justify-center text-brand-blue hover:neon-border transition-all opacity-0 group-hover:opacity-100 z-10">
+                                <i data-lucide="chevron-right" class="w-5 h-5 md:w-6 md:h-6"></i>
+                            </button>
+
+                            <div class="flex justify-center gap-2 mt-6" id="team-indicators"></div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="relative max-w-xl mx-auto group">
-                    <div class="relative overflow-hidden glass border-white/10 shadow-2xl">
-                        <img id="team-image" src="https://i.postimg.cc/5ySF4z0b/Whats-App-Image-2026-04-28-at-17-27-53.jpg" alt="Membro da Equipe" class="w-full h-auto object-contain max-h-[70vh]">
+                    <!-- Space Carousel -->
+                    <div class="flex flex-col">
+                        <div class="reveal mb-12">
+                            <span class="section-label">NOSSO ESPAÇO</span>
+                            <h2 class="text-2xl md:text-4xl mb-4 leading-tight">
+                                Ambiente <span class="neon-text">Premium</span>
+                            </h2>
+                        </div>
+
+                        <div class="relative w-full group">
+                            <div class="relative overflow-hidden glass border-white/10 shadow-2xl aspect-[4/5] sm:aspect-square lg:aspect-[4/5] flex items-center justify-center">
+                                <img id="space-image" src="https://i.postimg.cc/g2S8L3HT/Whats-App-Image-2026-04-28-at-17-21-47.jpg" alt="Interior da Clínica" class="w-full h-full object-cover">
+                            </div>
+
+                            <button id="prev-space" class="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 md:w-10 md:h-10 glass border-white/20 flex items-center justify-center text-brand-blue hover:neon-border transition-all opacity-0 group-hover:opacity-100 z-10">
+                                <i data-lucide="chevron-left" class="w-5 h-5 md:w-6 md:h-6"></i>
+                            </button>
+                            <button id="next-space" class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 md:w-10 md:h-10 glass border-white/20 flex items-center justify-center text-brand-blue hover:neon-border transition-all opacity-0 group-hover:opacity-100 z-10">
+                                <i data-lucide="chevron-right" class="w-5 h-5 md:w-6 md:h-6"></i>
+                            </button>
+
+                            <div class="flex justify-center gap-2 mt-6" id="space-indicators"></div>
+                        </div>
                     </div>
-
-                    <button id="prev-team" class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 glass border-white/20 flex items-center justify-center text-brand-blue hover:neon-border transition-all opacity-0 group-hover:opacity-100 z-10">
-                        <i data-lucide="chevron-left" class="w-6 h-6"></i>
-                    </button>
-                    <button id="next-team" class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 glass border-white/20 flex items-center justify-center text-brand-blue hover:neon-border transition-all opacity-0 group-hover:opacity-100 z-10">
-                        <i data-lucide="chevron-right" class="w-6 h-6"></i>
-                    </button>
-
-                    <div class="flex justify-center gap-2 mt-8" id="team-indicators"></div>
                 </div>
             </div>
         </section>
@@ -538,7 +566,7 @@
         // Team Carousel Logic
         const teamImages = [
             'https://i.postimg.cc/5ySF4z0b/Whats-App-Image-2026-04-28-at-17-27-53.jpg',
-            'https://i.postimg.cc/mZY9NvSC/Whats-App-Image-2026-04-28-at-17-27-41.jpg', // Fixed potential broken image from source if needed
+            'https://i.postimg.cc/mZY9NvSC/Whats-App-Image-2026-04-28-at-17-27-41.jpg',
             'https://i.postimg.cc/mZY9NvSC/Whats-App-Image-2026-04-28-at-17-27-54.jpg',
             'https://i.postimg.cc/d3jTsC1F/Whats-App-Image-2026-04-28-at-17-27-54-(2).jpg',
             'https://i.postimg.cc/1XrNmFtP/Whats-App-Image-2026-04-28-at-17-27-54-(3).jpg',
@@ -548,50 +576,60 @@
             'https://i.postimg.cc/HWwM4qtb/Whats-App-Image-2026-04-28-at-17-27-55-(1).jpg',
         ];
 
-        let currentIndex = 0;
-        const teamImgElement = document.getElementById('team-image');
-        const indicatorsContainer = document.getElementById('team-indicators');
+        const spaceImages = [
+            'https://i.postimg.cc/g2S8L3HT/Whats-App-Image-2026-04-28-at-17-21-47.jpg',
+            'https://i.postimg.cc/t4SWnFNB/Whats-App-Image-2026-04-28-at-17-21-46.jpg',
+            'https://i.postimg.cc/HkZX8b9B/Whats-App-Image-2026-04-28-at-17-21-46-(1).jpg',
+            'https://i.postimg.cc/g2S8L3HB/Whats-App-Image-2026-04-28-at-17-21-47-(2).jpg',
+        ];
 
-        function updateTeamSlide(index) {
-            currentIndex = index;
-            teamImgElement.style.opacity = 0;
-            teamImgElement.style.transform = 'scale(0.95)';
-            
-            setTimeout(() => {
-                teamImgElement.src = teamImages[currentIndex];
-                teamImgElement.style.opacity = 1;
-                teamImgElement.style.transform = 'scale(1)';
-                updateIndicators();
-            }, 300);
+        function createCarousel(imgArray, imgElementId, prevBtnId, nextBtnId, indicatorsId) {
+            let currentIndex = 0;
+            const imgElement = document.getElementById(imgElementId);
+            const indicatorsContainer = document.getElementById(indicatorsId);
+
+            function updateSlide(index) {
+                currentIndex = index;
+                imgElement.style.opacity = 0;
+                imgElement.style.transform = 'scale(0.95)';
+                
+                setTimeout(() => {
+                    imgElement.src = imgArray[currentIndex];
+                    imgElement.style.opacity = 1;
+                    imgElement.style.transform = 'scale(1)';
+                    updateIndicators();
+                }, 300);
+            }
+
+            function updateIndicators() {
+                indicatorsContainer.innerHTML = '';
+                imgArray.forEach((_, idx) => {
+                    const indicator = document.createElement('button');
+                    indicator.className = `h-1 transition-all duration-300 ${idx === currentIndex ? 'w-8 bg-brand-blue shadow-[0_0_10px_rgba(0,191,255,0.5)]' : 'w-2 bg-white/10'}`;
+                    indicator.onclick = () => updateSlide(idx);
+                    indicatorsContainer.appendChild(indicator);
+                });
+            }
+
+            document.getElementById(prevBtnId).onclick = () => {
+                const newIndex = (currentIndex - 1 + imgArray.length) % imgArray.length;
+                updateSlide(newIndex);
+            };
+
+            document.getElementById(nextBtnId).onclick = () => {
+                const newIndex = (currentIndex + 1) % imgArray.length;
+                updateSlide(newIndex);
+            };
+
+            updateIndicators();
+            setInterval(() => {
+                const newIndex = (currentIndex + 1) % imgArray.length;
+                updateSlide(newIndex);
+            }, 5000);
         }
 
-        function updateIndicators() {
-            indicatorsContainer.innerHTML = '';
-            teamImages.forEach((_, idx) => {
-                const indicator = document.createElement('button');
-                indicator.className = `h-1 transition-all duration-300 ${idx === currentIndex ? 'w-8 bg-brand-blue shadow-[0_0_10px_rgba(0,191,255,0.5)]' : 'w-2 bg-white/10'}`;
-                indicator.onclick = () => updateTeamSlide(idx);
-                indicatorsContainer.appendChild(indicator);
-            });
-        }
-
-        document.getElementById('prev-team').onclick = () => {
-            const newIndex = (currentIndex - 1 + teamImages.length) % teamImages.length;
-            updateTeamSlide(newIndex);
-        };
-
-        document.getElementById('next-team').onclick = () => {
-            const newIndex = (currentIndex + 1) % teamImages.length;
-            updateTeamSlide(newIndex);
-        };
-
-        // Auto slide
-        setInterval(() => {
-            const newIndex = (currentIndex + 1) % teamImages.length;
-            updateTeamSlide(newIndex);
-        }, 5000);
-
-        updateIndicators();
+        createCarousel(teamImages, 'team-image', 'prev-team', 'next-team', 'team-indicators');
+        createCarousel(spaceImages, 'space-image', 'prev-space', 'next-space', 'space-indicators');
 
         // Navbar scroll effect
         window.onscroll = () => {
