@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica VittaPro | Um Novo Padrão de Cuidado</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#00BFFF',
+                            dark: '#0A0A0A',
+                            charcoal: '#111111',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+                        display: ['Poppins', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply bg-brand-dark text-white font-sans antialiased selection:bg-brand-blue selection:text-brand-dark;
+            }
+            h1, h2, h3, h4, h5, h6 {
+                @apply font-display font-black uppercase tracking-tighter;
+            }
+        }
+
+        @layer components {
+            .glass {
+                @apply bg-white/5 backdrop-blur-xl border border-white/10;
+            }
+            .glass-card {
+                @apply bg-white/[0.03] backdrop-blur-2xl border border-white/[0.08] shadow-2xl;
+            }
+            .neon-text {
+                @apply text-brand-blue drop-shadow-[0_0_10px_rgba(0,191,255,0.4)];
+            }
+            .neon-border {
+                @apply border-brand-blue/30 shadow-[0_0_20px_rgba(0,191,255,0.15)];
+            }
+            .section-label {
+                @apply text-brand-blue font-mono text-[10px] uppercase tracking-[0.3em] block mb-4;
+            }
+            .btn-neon {
+                @apply relative inline-flex items-center justify-center bg-brand-blue text-brand-dark font-black px-12 py-5 rounded-none overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,191,255,0.4)] hover:scale-105 active:scale-95;
+            }
+            .btn-outline-neon {
+                @apply border border-brand-blue/30 px-8 py-3 text-brand-blue font-bold uppercase tracking-widest text-[10px] transition-all duration-300 hover:bg-brand-blue hover:text-brand-dark hover:shadow-[0_0_20px_rgba(0,191,255,0.2)];
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .reveal-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .reveal-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Carousel animation */
+        #team-image {
+            transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent h-20 flex items-center">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="#" class="h-10 flex items-center">
+                <img src="https://i.postimg.cc/tJjxGk97/Whats-App-Image-2026-04-28-at-17-21-48-(10).jpg" alt="VittaPro Logo" class="h-full brightness-125">
+            </a>
+            <div class="hidden lg:flex items-center gap-10">
+                <a href="#inicio" class="text-[10px] font-bold uppercase tracking-[0.25em] text-white/50 hover:text-brand-blue transition-colors">Início</a>
+                <a href="#a-clinica" class="text-[10px] font-bold uppercase tracking-[0.25em] text-white/50 hover:text-brand-blue transition-colors">A Clínica</a>
+                <a href="#servicos" class="text-[10px] font-bold uppercase tracking-[0.25em] text-white/50 hover:text-brand-blue transition-colors">Serviços</a>
+                <a href="#equipe" class="text-[10px] font-bold uppercase tracking-[0.25em] text-white/50 hover:text-brand-blue transition-colors">Equipe</a>
+                <a href="#depoimentos" class="text-[10px] font-bold uppercase tracking-[0.25em] text-white/50 hover:text-brand-blue transition-colors">Depoimentos</a>
+                <a href="#contato" class="text-[10px] font-bold uppercase tracking-[0.25em] text-white/50 hover:text-brand-blue transition-colors">Contato</a>
+                <a href="https://wa.me/+554733991989" target="_blank" rel="noopener noreferrer" class="btn-outline-neon">Agendar</a>
+            </div>
+            <!-- Mobile Menu Toggle (Simplified for static) -->
+            <button class="lg:hidden text-white/50 hover:text-brand-blue">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main>
+        <section id="inicio" class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img src="https://lh3.googleusercontent.com/p/AF1QipOe84_bpVzGBLCOw_tMxp1tm8tPWBSiPi6UrVCd=w1600-h1200-k-no" alt="Hero Background" class="w-full h-full object-cover grayscale opacity-30 scale-105">
+                <div class="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/70 to-transparent"></div>
+            </div>
+
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="max-w-4xl">
+                    <div class="reveal-left inline-flex items-center gap-3 mb-10">
+                        <span class="section-label mb-0">BEM-VINDO À VITTAPRO</span>
+                        <span class="w-12 h-[1px] bg-brand-blue/30"></span>
+                    </div>
+
+                    <h1 class="reveal text-5xl md:text-8xl lg:text-9xl mb-8 font-black">
+                        Um novo padrão<br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-blue-400">de cuidado!</span>
+                    </h1>
+
+                    <p class="reveal text-sm md:text-base text-gray-400 mb-12 leading-relaxed max-w-lg tracking-wide">
+                        Saúde e bem-estar personalizados em Timbó/SC. Nossa clínica multidisciplinar une tecnologia e humanização para resultados reais.
+                    </p>
+
+                    <div class="reveal flex flex-col sm:flex-row gap-6 items-center sm:items-start text-center sm:text-left">
+                        <a href="https://wa.me/+554733991989" target="_blank" rel="noopener noreferrer" class="btn-neon group uppercase">
+                            Agendar Avaliação
+                            <i data-lucide="chevron-right" class="ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                        
+                        <div class="flex items-center gap-3 text-[10px] font-bold text-white/40 tracking-[0.2em]">
+                            <div class="flex text-brand-blue gap-0.5">
+                                ★★★★★
+                            </div>
+                            <span class="uppercase italic tracking-tighter">+25 AVALIAÇÕES NO GOOGLE</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="a-clinica" class="py-24 relative overflow-hidden">
+            <div class="container mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-16 items-center text-center lg:text-left">
+                    <div class="reveal-left relative">
+                        <div class="glass-card p-1 overflow-hidden">
+                            <div class="aspect-[4/3] rounded-2xl overflow-hidden">
+                                <img src="https://i.postimg.cc/d3jTsC1Y/centro.jpg" alt="Centro VittaPro" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reveal-right">
+                        <span class="section-label">A CLÍNICA</span>
+                        <h2 class="text-3xl md:text-5xl mb-8 leading-tight">
+                            Cuidando de você por completo com <span class="neon-text">excelência</span>
+                        </h2>
+                        <p class="text-sm text-gray-400 mb-10 leading-relaxed max-w-xl mx-auto lg:mx-0">
+                            A Clínica VittaPro é uma referência em Timbó/SC, unindo tecnologia de ponta e uma equipe multidisciplinar dedicada à sua saúde. Nossa missão é oferecer um novo padrão de cuidado em um ambiente técnico e humanizado.
+                        </p>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="flex items-center gap-3 p-4 glass border-white/5 justify-center lg:justify-start">
+                                <i data-lucide="shield-check" class="text-brand-blue w-4 h-4"></i>
+                                <span class="text-[10px] text-white/70 font-bold uppercase tracking-widest">Segurança</span>
+                            </div>
+                            <div class="flex items-center gap-3 p-4 glass border-white/5 justify-center lg:justify-start">
+                                <i data-lucide="award" class="text-brand-blue w-4 h-4"></i>
+                                <span class="text-[10px] text-white/70 font-bold uppercase tracking-widest">Qualidade</span>
+                            </div>
+                            <div class="flex items-center gap-3 p-4 glass border-white/5 justify-center lg:justify-start">
+                                <i data-lucide="users" class="text-brand-blue w-4 h-4"></i>
+                                <span class="text-[10px] text-white/70 font-bold uppercase tracking-widest">Equipe</span>
+                            </div>
+                            <div class="flex items-center gap-3 p-4 glass border-white/5 justify-center lg:justify-start">
+                                <i data-lucide="heart" class="text-brand-blue w-4 h-4"></i>
+                                <span class="text-[10px] text-white/70 font-bold uppercase tracking-widest">Cuidado</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="servicos" class="py-24 bg-brand-charcoal/30">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <div class="reveal">
+                        <span class="section-label">ESPECIALIDADES DISPONÍVEIS</span>
+                        <h2 class="text-3xl md:text-5xl mb-6">
+                            Cuidado <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-blue-400">Completo</span>
+                        </h2>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="services-container">
+                    <!-- Dynamic Services Injection or Static Markup -->
+                    <!-- I'll use static markup for better SEO and perceived performance as requested -->
+                    
+                    <!-- Category 1 -->
+                    <div class="reveal glass p-8 border border-white/5 flex flex-col h-full hover:neon-border transition-all group">
+                        <h3 class="text-xs font-black uppercase tracking-[0.2em] text-brand-blue mb-6">Estética e Bem-Estar</h3>
+                        <div class="space-y-6">
+                            <div>
+                                <h4 class="text-[10px] font-bold text-white/40 uppercase tracking-widest mb-3 flex items-center gap-2">
+                                    <span class="w-1.5 h-1.5 bg-brand-blue/40 rounded-full"></span>Tratamentos Corporais
+                                </h4>
+                                <ul class="space-y-1.5 pl-3.5">
+                                    <li class="text-[11px] text-white/50 border-l border-white/5 pl-3 transition-colors hover:text-brand-blue hover:border-brand-blue/30">Massagem modeladora</li>
+                                    <li class="text-[11px] text-white/50 border-l border-white/5 pl-3 transition-colors hover:text-brand-blue hover:border-brand-blue/30">Drenagem linfática</li>
+                                    <li class="text-[11px] text-white/50 border-l border-white/5 pl-3 transition-colors hover:text-brand-blue hover:border-brand-blue/30">Carboxiterapia</li>
+                                    <li class="text-[11px] text-white/50 border-l border-white/5 pl-3 transition-colors hover:text-brand-blue hover:border-brand-blue/30">Radiofrequência</li>
+                                    <li class="text-[11px] text-white/50 border-l border-white/5 pl-3 transition-colors hover:text-brand-blue hover:border-brand-blue/30">Criolipólise</li>
+                                    <li class="text-[11px] text-white/50 border-l border-white/5 pl-3 transition-colors hover:text-brand-blue hover:border-brand-blue/30">Tratamento com enzimas</li>
+                                    <li class="text-[11px] text-white/50 border-l border-white/5 pl-3 transition-colors hover:text-brand-blue hover:border-brand-blue/30">Lipo de papada</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="text-[10px] font-bold text-white/40 uppercase tracking-widest mb-3 flex items-center gap-2">
+                                    <span class="w-1.5 h-1.5 bg-brand-blue/40 rounded-full"></span>Tratamentos Faciais
+                                </h4>
+                                <ul class="space-y-1.5 pl-3.5">
+                                    <li class="text-[11px] text-white/50 border-l border-white/5 pl-3 transition-colors hover:text-brand-blue hover:border-brand-blue/30">Limpeza de pele</li>
+                                    <li class="text-[11px] text-white/50 border-l border-white/5 pl-3 transition-colors hover:text-brand-blue hover:border-brand-blue/30">Hidratação facial</li>
+                                    <li class="text-[11px] text-white/50 border-l border-white/5 pl-3 transition-colors hover:text-brand-blue hover:border-brand-blue/30">Peelings</li>
+                                    <li class="text-[11px] text-white/50 border-l border-white/5 pl-3 transition-colors hover:text-brand-blue hover:border-brand-blue/30">Microagulhamento</li>
+                                    <li class="text-[11px] text-white/50 border-l border-white/5 pl-3 transition-colors hover:text-brand-blue hover:border-brand-blue/30">Jato de plasma</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category 2 -->
+                    <div class="reveal glass p-8 border border-white/5 flex flex-col h-full hover:neon-border transition-all group">
+                        <h3 class="text-xs font-black uppercase tracking-[0.2em] text-brand-blue mb-6">Biomedicina Estética</h3>
+                        <ul class="space-y-2">
+                            <li class="text-[11px] text-white/60 flex items-center gap-3"><span class="w-1 h-1 bg-brand-blue/30"></span>Preenchimento labial</li>
+                            <li class="text-[11px] text-white/60 flex items-center gap-3"><span class="w-1 h-1 bg-brand-blue/30"></span>Harmonização facial</li>
+                            <li class="text-[11px] text-white/60 flex items-center gap-3"><span class="w-1 h-1 bg-brand-blue/30"></span>Toxina botulínica (Botox)</li>
+                            <li class="text-[11px] text-white/60 flex items-center gap-3"><span class="w-1 h-1 bg-brand-blue/30"></span>Bioestimulador de colágeno</li>
+                            <li class="text-[11px] text-white/60 flex items-center gap-3"><span class="w-1 h-1 bg-brand-blue/30"></span>Skinbooster facial</li>
+                            <li class="text-[11px] text-white/60 flex items-center gap-3"><span class="w-1 h-1 bg-brand-blue/30"></span>Endolaser</li>
+                            <li class="text-[11px] text-white/60 flex items-center gap-3"><span class="w-1 h-1 bg-brand-blue/30"></span>Aplicações de vitaminas</li>
+                        </ul>
+                    </div>
+
+                    <!-- Category 3 -->
+                    <div class="reveal glass p-8 border border-white/5 flex flex-col h-full hover:neon-border transition-all group">
+                        <h3 class="text-xs font-black uppercase tracking-[0.2em] text-brand-blue mb-6">Fisioterapia e Reabilitação</h3>
+                        <ul class="space-y-2">
+                            <li class="text-[11px] text-white/60 flex items-center gap-3"><span class="w-1 h-1 bg-brand-blue/30"></span>Liberação miofascial</li>
+                            <li class="text-[11px] text-white/60 flex items-center gap-3"><span class="w-1 h-1 bg-brand-blue/30"></span>Quiropraxia</li>
+                            <li class="text-[11px] text-white/60 flex items-center gap-3"><span class="w-1 h-1 bg-brand-blue/30"></span>Reabilitação física</li>
+                        </ul>
+                    </div>
+
+                    <!-- Category 4 -->
+                    <div class="reveal glass p-8 border border-white/5 flex flex-col h-full hover:neon-border transition-all group">
+                        <h3 class="text-xs font-black uppercase tracking-[0.2em] text-brand-blue mb-6">Beleza e Cuidados Pessoais</h3>
+                        <ul class="space-y-2">
+                            <li class="text-[11px] text-white/60 flex items-center gap-3"><span class="w-1 h-1 bg-brand-blue/30"></span>Design de sobrancelhas</li>
+                            <li class="text-[11px] text-white/60 flex items-center gap-3"><span class="w-1 h-1 bg-brand-blue/30"></span>Depilação com fio</li>
+                            <li class="text-[11px] text-white/60 flex items-center gap-3"><span class="w-1 h-1 bg-brand-blue/30"></span>Micropigmentação labial</li>
+                            <li class="text-[11px] text-white/60 flex items-center gap-3"><span class="w-1 h-1 bg-brand-blue/30"></span>Micropigmentação fio a fio</li>
+                            <li class="text-[11px] text-white/60 flex items-center gap-3"><span class="w-1 h-1 bg-brand-blue/30"></span>Manicure e pedicure</li>
+                        </ul>
+                    </div>
+
+                    <!-- Category 5 -->
+                    <div class="reveal glass p-8 border border-white/5 flex flex-col h-full hover:neon-border transition-all group">
+                        <h3 class="text-xs font-black uppercase tracking-[0.2em] text-brand-blue mb-6">Protocolos Personalizados</h3>
+                        <ul class="space-y-2">
+                            <li class="text-[11px] text-white/60 flex items-center gap-3"><span class="w-1 h-1 bg-brand-blue/30"></span>Emagrecimento</li>
+                            <li class="text-[11px] text-white/60 flex items-center gap-3"><span class="w-1 h-1 bg-brand-blue/30"></span>Tratamento de lipedema</li>
+                            <li class="text-[11px] text-white/60 flex items-center gap-3"><span class="w-1 h-1 bg-brand-blue/30"></span>Redução de linhas</li>
+                            <li class="text-[11px] text-white/60 flex items-center gap-3"><span class="w-1 h-1 bg-brand-blue/30"></span>Flacidez</li>
+                            <li class="text-[11px] text-white/60 flex items-center gap-3"><span class="w-1 h-1 bg-brand-blue/30"></span>Gordura localizada</li>
+                        </ul>
+                    </div>
+
+                    <!-- Specialty Card -->
+                    <div class="reveal glass p-8 border border-brand-blue/20 bg-brand-blue/5 flex flex-col justify-center items-center text-center space-y-4">
+                        <h3 class="text-xs font-black uppercase tracking-widest text-[#00BFFF]">Ortopedia & Outros</h3>
+                        <p class="text-[11px] text-white/50 px-4">Psicologia, Psicanálise e Consultas Nutricionais Especializadas.</p>
+                        <div class="w-12 h-[1px] bg-brand-blue/30"></div>
+                        <p class="text-[10px] uppercase font-bold tracking-tighter">Atendimento Multidisciplinar</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section id="equipe" class="py-24 bg-brand-charcoal/20 overflow-hidden text-center">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <div class="reveal">
+                        <span class="section-label">NOSSA EQUIPE TÉCNICA</span>
+                        <h2 class="text-3xl md:text-5xl mb-4 leading-tight">
+                            Especialistas em <span class="neon-text">Ação</span>
+                        </h2>
+                    </div>
+                </div>
+
+                <div class="relative max-w-xl mx-auto group">
+                    <div class="relative overflow-hidden glass border-white/10 shadow-2xl">
+                        <img id="team-image" src="https://i.postimg.cc/5ySF4z0b/Whats-App-Image-2026-04-28-at-17-27-53.jpg" alt="Membro da Equipe" class="w-full h-auto object-contain max-h-[70vh]">
+                    </div>
+
+                    <button id="prev-team" class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 glass border-white/20 flex items-center justify-center text-brand-blue hover:neon-border transition-all opacity-0 group-hover:opacity-100 z-10">
+                        <i data-lucide="chevron-left"></i>
+                    </button>
+                    <button id="next-team" class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 glass border-white/20 flex items-center justify-center text-brand-blue hover:neon-border transition-all opacity-0 group-hover:opacity-100 z-10">
+                        <i data-lucide="chevron-right"></i>
+                    </button>
+
+                    <div class="flex justify-center gap-2 mt-8" id="team-indicators"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="depoimentos" class="py-24 bg-brand-charcoal/30 relative overflow-hidden">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <div class="reveal">
+                        <span class="section-label">FEEDBACK.LOG</span>
+                        <h2 class="text-3xl md:text-5xl mb-6 font-black leading-tight">
+                            A Voz dos nossos <span class="neon-text">Clientes</span>
+                        </h2>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Testimonial 1 -->
+                    <div class="reveal glass p-8 border border-white/5 flex flex-col h-full hover:neon-border transition-all group">
+                        <div class="flex text-brand-blue/30 mb-6 group-hover:neon-text transition-all">
+                            <i data-lucide="quote" class="w-7 h-7"></i>
+                        </div>
+                        <p class="text-xs text-white/50 leading-relaxed italic mb-8 flex-grow tracking-wide">
+                            "Excelente, as meninas da recepção muito queridas e simpáticas, o ambiente da clínica é ótimo, tudo perfeito."
+                        </p>
+                        <div class="flex items-center gap-4 pt-6 border-t border-white/5">
+                            <img src="https://lh3.googleusercontent.com/a/ACg8ocLh5mC8Bq53y75l4HnWY1RQtCZtBNdYv2CnmqQUNyNm4Y-PiA=w32-h32-p-rp-mo-br100" alt="Claudete Vanderlinde" class="w-10 h-10 rounded-full grayscale group-hover:grayscale-0 transition-all opacity-60 group-hover:opacity-100">
+                            <div>
+                                <h4 class="text-[10px] font-black uppercase tracking-widest text-white leading-tight">Claudete Vanderlinde</h4>
+                                <p class="text-brand-blue font-mono text-[8px] uppercase tracking-tighter mt-1">Google Verified Review</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="reveal glass p-8 border border-white/5 flex flex-col h-full hover:neon-border transition-all group" style="transition-delay: 0.1s;">
+                        <div class="flex text-brand-blue/30 mb-6 group-hover:neon-text transition-all">
+                            <i data-lucide="quote" class="w-7 h-7"></i>
+                        </div>
+                        <p class="text-xs text-white/50 leading-relaxed italic mb-8 flex-grow tracking-wide">
+                            "Profissionais incríveis, o atendimento é impecável e os resultados superam as expectativas. Recomendo muito!"
+                        </p>
+                        <div class="flex items-center gap-4 pt-6 border-t border-white/5">
+                            <img src="https://lh3.googleusercontent.com/a/ACg8ocL6EclTWhH3XgA_BvH9U07n6lP-NqG-V_T3H3H3H3H3=w32-h32-p-rp-mo-br100" alt="Etel Liz Holetz Brandes" class="w-10 h-10 rounded-full grayscale group-hover:grayscale-0 transition-all opacity-60 group-hover:opacity-100">
+                            <div>
+                                <h4 class="text-[10px] font-black uppercase tracking-widest text-white leading-tight">Etel Liz Holetz Brandes</h4>
+                                <p class="text-brand-blue font-mono text-[8px] uppercase tracking-tighter mt-1">Google Verified Review</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="reveal glass p-8 border border-white/5 flex flex-col h-full hover:neon-border transition-all group" style="transition-delay: 0.2s;">
+                        <div class="flex text-brand-blue/30 mb-6 group-hover:neon-text transition-all">
+                            <i data-lucide="quote" class="w-7 h-7"></i>
+                        </div>
+                        <p class="text-xs text-white/50 leading-relaxed italic mb-8 flex-grow tracking-wide">
+                            "Atendimento nota 10, desde a recepção até os especialistas. Ambiente muito agradável."
+                        </p>
+                        <div class="flex items-center gap-4 pt-6 border-t border-white/5">
+                            <img src="https://lh3.googleusercontent.com/a/ACg8ocL6EclTWhH3XgA_BvH9U07n6lP-NqG-V_T3H3H3H3H3=w32-h32-p-rp-mo-br100" alt="Luiz Gustavo" class="w-10 h-10 rounded-full grayscale group-hover:grayscale-0 transition-all opacity-60 group-hover:opacity-100">
+                            <div>
+                                <h4 class="text-[10px] font-black uppercase tracking-widest text-white leading-tight">Luiz Gustavo</h4>
+                                <p class="text-brand-blue font-mono text-[8px] uppercase tracking-tighter mt-1">Google Verified Review</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contato" class="py-24 bg-brand-charcoal/10">
+            <div class="container mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-16 items-start">
+                    <div class="reveal-left">
+                        <span class="section-label">CONTATO E LOCALIZAÇÃO</span>
+                        <h2 class="text-3xl md:text-5xl mb-8 leading-tight">
+                            Fale <span class="neon-text">Conosco</span>
+                        </h2>
+                        <p class="text-sm text-gray-400 mb-12 max-w-md leading-relaxed mx-auto lg:mx-0">
+                            Estamos prontos para atender você e tirar todas as suas dúvidas. Escolha o canal de sua preferência ou visite nossa sede em Timbó.
+                        </p>
+
+                        <div class="space-y-6">
+                            <div class="reveal flex gap-6 p-6 glass border-white/5 group hover:neon-border transition-all text-left">
+                                <div class="w-12 h-12 glass flex items-center justify-center text-brand-blue group-hover:neon-text transition-all shrink-0">
+                                    <i data-lucide="map-pin"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-[10px] font-black uppercase tracking-widest mb-1 text-white/40">Endereço</h4>
+                                    <p class="text-sm mb-2 text-white/80">R. Duque de Caxias, 582 - Centro, Timbó - SC</p>
+                                    <a href="https://www.google.com/maps/place/Cl%C3%ADnica+VittaPro/@-26.8209895,-49.2748734,17z/data=!4m6!3m5!1s0x94defd002301489f:0xf90bfd2bb98d75a6!8m2!3d-26.8209895!4d-49.2748734" target="_blank" rel="noopener noreferrer" class="text-[10px] font-bold text-brand-blue uppercase hover:underline tracking-widest">Ver no Google Maps</a>
+                                </div>
+                            </div>
+
+                            <div class="reveal flex gap-6 p-6 glass border-white/5 group hover:neon-border transition-all text-left">
+                                <div class="w-12 h-12 glass flex items-center justify-center text-brand-blue group-hover:neon-text transition-all shrink-0">
+                                    <i data-lucide="phone"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-[10px] font-black uppercase tracking-widest mb-1 text-white/40">Telefone / WhatsApp</h4>
+                                    <p class="text-sm mb-2 text-brand-blue font-bold">(47) 3399-1989</p>
+                                    <a href="https://wa.me/+554733991989" target="_blank" rel="noopener noreferrer" class="text-[10px] font-bold text-brand-blue uppercase hover:underline tracking-widest">Iniciar Conversa</a>
+                                </div>
+                            </div>
+
+                            <div class="reveal flex gap-6 p-6 glass border-white/5 group hover:neon-border transition-all text-left">
+                                <div class="w-12 h-12 glass flex items-center justify-center text-brand-blue group-hover:neon-text transition-all shrink-0">
+                                    <i data-lucide="instagram"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-[10px] font-black uppercase tracking-widest mb-1 text-white/40">Instagram</h4>
+                                    <p class="text-sm mb-2 text-white/80">@clinicavittapro</p>
+                                    <a href="https://www.instagram.com/clinicavittapro" target="_blank" rel="noopener noreferrer" class="text-[10px] font-bold text-brand-blue uppercase hover:underline tracking-widest">Seguir Perfil</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reveal-right h-[450px] w-full glass neon-border overflow-hidden">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.845!2d-49.277!3d-26.821!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94defd002301489f%3A0xf90bfd2bb98d75a6!2sCl%C3%ADnica%20VittaPro!5e0!3m2!1spt-BR!2sbr!4v1714340000000"
+                            width="100%" 
+                            height="100%" 
+                            style="border: 0; filter: invert(90%) hue-rotate(180deg) brightness(0.7);" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-brand-dark border-t border-white/5 text-center md:text-left">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <p class="text-[10px] text-gray-500 tracking-[0.2em] uppercase font-bold">
+                    © 2026 Clínica VittaPro. Um NOVO PADRÃO de Cuidado.
+                </p>
+                <div class="flex gap-8 text-[9px] font-black uppercase tracking-[0.3em] text-white/30">
+                    <a href="#" class="hover:text-brand-blue transition-colors">POLÍTICA DE PRIVACIDADE</a>
+                    <span class="text-white/5">|</span>
+                    <a href="#" class="hover:text-brand-blue transition-colors">TERMOS DE USO</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Team Carousel Logic
+        const teamImages = [
+            'https://i.postimg.cc/5ySF4z0b/Whats-App-Image-2026-04-28-at-17-27-53.jpg',
+            'https://i.postimg.cc/mZY9NvSC/Whats-App-Image-2026-04-28-at-17-27-41.jpg', // Fixed potential broken image from source if needed
+            'https://i.postimg.cc/mZY9NvSC/Whats-App-Image-2026-04-28-at-17-27-54.jpg',
+            'https://i.postimg.cc/d3jTsC1F/Whats-App-Image-2026-04-28-at-17-27-54-(2).jpg',
+            'https://i.postimg.cc/1XrNmFtP/Whats-App-Image-2026-04-28-at-17-27-54-(3).jpg',
+            'https://i.postimg.cc/sfYW9kJG/Whats-App-Image-2026-04-28-at-17-27-54-(4).jpg',
+            'https://i.postimg.cc/NG6X73xT/Whats-App-Image-2026-04-28-at-17-27-54-(9).jpg',
+            'https://i.postimg.cc/jqHfQphH/Whats-App-Image-2026-04-28-at-17-27-55.jpg',
+            'https://i.postimg.cc/HWwM4qtb/Whats-App-Image-2026-04-28-at-17-27-55-(1).jpg',
+        ];
+
+        let currentIndex = 0;
+        const teamImgElement = document.getElementById('team-image');
+        const indicatorsContainer = document.getElementById('team-indicators');
+
+        function updateTeamSlide(index) {
+            currentIndex = index;
+            teamImgElement.style.opacity = 0;
+            teamImgElement.style.transform = 'scale(0.95)';
+            
+            setTimeout(() => {
+                teamImgElement.src = teamImages[currentIndex];
+                teamImgElement.style.opacity = 1;
+                teamImgElement.style.transform = 'scale(1)';
+                updateIndicators();
+            }, 300);
+        }
+
+        function updateIndicators() {
+            indicatorsContainer.innerHTML = '';
+            teamImages.forEach((_, idx) => {
+                const indicator = document.createElement('button');
+                indicator.className = `h-1 transition-all duration-300 ${idx === currentIndex ? 'w-8 bg-brand-blue shadow-[0_0_10px_rgba(0,191,255,0.5)]' : 'w-2 bg-white/10'}`;
+                indicator.onclick = () => updateTeamSlide(idx);
+                indicatorsContainer.appendChild(indicator);
+            });
+        }
+
+        document.getElementById('prev-team').onclick = () => {
+            const newIndex = (currentIndex - 1 + teamImages.length) % teamImages.length;
+            updateTeamSlide(newIndex);
+        };
+
+        document.getElementById('next-team').onclick = () => {
+            const newIndex = (currentIndex + 1) % teamImages.length;
+            updateTeamSlide(newIndex);
+        };
+
+        // Auto slide
+        setInterval(() => {
+            const newIndex = (currentIndex + 1) % teamImages.length;
+            updateTeamSlide(newIndex);
+        }, 5000);
+
+        updateIndicators();
+
+        // Navbar scroll effect
+        window.onscroll = () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-brand-dark/80', 'backdrop-blur-md', 'border-white/5');
+                nav.classList.remove('border-transparent');
+            } else {
+                nav.classList.remove('bg-brand-dark/80', 'backdrop-blur-md', 'border-white/5');
+                nav.classList.add('border-transparent');
+            }
+            reveal();
+        };
+
+        // Scroll reveal logic
+        function reveal() {
+            const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+            for (let i = 0; i < reveals.length; i++) {
+                const windowHeight = window.innerHeight;
+                const elementTop = reveals[i].getBoundingClientRect().top;
+                const elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add('active');
+                }
+            }
+        }
+
+        // Initial check
+        reveal();
+    </script>
+</body>
+</html>
