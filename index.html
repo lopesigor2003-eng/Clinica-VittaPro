@@ -131,29 +131,34 @@
 
     <!-- Hero Section -->
     <main>
-        <section id="inicio" class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <section id="inicio" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden text-center">
             <div class="absolute inset-0 z-0">
-                <img src="https://lh3.googleusercontent.com/p/AF1QipOe84_bpVzGBLCOw_tMxp1tm8tPWBSiPi6UrVCd=w1600-h1200-k-no" alt="Hero Background" class="w-full h-full object-cover grayscale opacity-30 scale-105">
-                <div class="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/70 to-transparent"></div>
+                <img src="https://lh3.googleusercontent.com/p/AF1QipOe84_bpVzGBLCOw_tMxp1tm8tPWBSiPi6UrVCd=w1600-h1200-k-no" alt="Hero Background" class="w-full h-full object-cover opacity-40 scale-105">
+                <div class="absolute inset-0 bg-gradient-to-b from-brand-dark via-brand-dark/60 to-brand-dark"></div>
             </div>
 
             <div class="container mx-auto px-6 relative z-10">
-                <div class="max-w-4xl">
-                    <div class="reveal-left inline-flex items-center gap-3 mb-10">
-                        <span class="section-label mb-0">BEM-VINDO À VITTAPRO</span>
-                        <span class="w-12 h-[1px] bg-brand-blue/30"></span>
+                <div class="max-w-5xl mx-auto flex flex-col items-center">
+                    <div class="reveal mb-12">
+                        <img src="https://i.postimg.cc/tJjxGk97/Whats-App-Image-2026-04-28-at-17-21-48-(10).jpg" alt="VittaPro Logo" class="h-32 md:h-52 brightness-125 drop-shadow-[0_0_30px_rgba(0,191,255,0.3)]">
                     </div>
 
-                    <h1 class="reveal text-5xl md:text-8xl lg:text-9xl mb-8 font-black">
+                    <div class="reveal inline-flex items-center gap-3 mb-8">
+                        <span class="w-8 h-[1px] bg-brand-blue/30"></span>
+                        <span class="section-label mb-0">BEM-VINDO À VITTAPRO</span>
+                        <span class="w-8 h-[1px] bg-brand-blue/30"></span>
+                    </div>
+
+                    <h1 class="reveal text-4xl md:text-6xl lg:text-7xl mb-8 font-black leading-none">
                         Um novo padrão<br>
                         <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-blue-400">de cuidado!</span>
                     </h1>
 
-                    <p class="reveal text-sm md:text-base text-gray-400 mb-12 leading-relaxed max-w-lg tracking-wide">
-                        Saúde e bem-estar personalizados em Timbó/SC. Nossa clínica multidisciplinar une tecnologia e humanização para resultados reais.
+                    <p class="reveal text-sm md:text-base text-gray-300 mb-12 leading-relaxed max-w-2xl tracking-wide">
+                        Saúde e bem-estar personalizados em Timbó/SC. Nossa clínica multidisciplinar une tecnologia e humanização para resultados reais na sua vida.
                     </p>
 
-                    <div class="reveal flex flex-col sm:flex-row gap-6 items-center sm:items-start text-center sm:text-left">
+                    <div class="reveal flex flex-col sm:flex-row gap-6 items-center justify-center">
                         <a href="https://wa.me/+554733991989" target="_blank" rel="noopener noreferrer" class="btn-neon group uppercase">
                             Agendar Avaliação
                             <i data-lucide="chevron-right" class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform"></i>
@@ -163,7 +168,7 @@
                             <div class="flex text-brand-blue gap-0.5">
                                 ★★★★★
                             </div>
-                            <span class="uppercase italic tracking-tighter">+25 AVALIAÇÕES NO GOOGLE</span>
+                            <span class="uppercase italic tracking-tighter text-white/50">+25 AVALIAÇÕES NO GOOGLE</span>
                         </div>
                     </div>
                 </div>
@@ -191,7 +196,7 @@
                             A Clínica VittaPro é uma referência em Timbó/SC, unindo tecnologia de ponta e uma equipe multidisciplinar dedicada à sua saúde. Nossa missão é oferecer um novo padrão de cuidado em um ambiente técnico e humanizado.
                         </p>
 
-                        <div class="grid grid-cols-2 gap-4">
+                        <div class="grid grid-cols-2 gap-4 mb-10">
                             <div class="flex items-center gap-3 p-4 glass border-white/5 justify-center lg:justify-start">
                                 <i data-lucide="shield-check" class="text-brand-blue w-4 h-4"></i>
                                 <span class="text-[10px] text-white/70 font-bold uppercase tracking-widest">Segurança</span>
@@ -209,13 +214,19 @@
                                 <span class="text-[10px] text-white/70 font-bold uppercase tracking-widest">Cuidado</span>
                             </div>
                         </div>
+
+                        <div class="flex justify-center lg:justify-start">
+                            <a href="https://wa.me/+554733991989" target="_blank" rel="noopener noreferrer" class="btn-outline-neon px-12 py-4 text-xs">
+                                Saiba mais sobre nós
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Services Section -->
-        <section id="servicos" class="py-24 bg-brand-charcoal/30">
+        <section id="servicos" class="py-24 bg-brand-charcoal/50">
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-2xl mx-auto mb-16">
                     <div class="reveal">
@@ -226,98 +237,119 @@
                     </div>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="services-container">
-                    <!-- Dynamic Services Injection or Static Markup -->
-                    <!-- I'll use static markup for better SEO and perceived performance as requested -->
-                    
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="services-container">
                     <!-- Category 1 -->
-                    <div class="reveal glass p-8 border border-white/5 flex flex-col h-full hover:neon-border transition-all group">
-                        <h3 class="text-xs font-black uppercase tracking-[0.2em] text-brand-blue mb-6">Estética e Bem-Estar</h3>
-                        <div class="space-y-6">
+                    <div class="reveal glass p-10 border border-white/10 flex flex-col h-full hover:bg-white/[0.07] transition-all group shadow-xl">
+                        <div class="mb-6 text-brand-blue">
+                            <i data-lucide="sparkles" class="w-8 h-8 opacity-50 group-hover:opacity-100 transition-opacity"></i>
+                        </div>
+                        <h3 class="text-lg font-black uppercase tracking-tight text-white mb-6 group-hover:text-brand-blue transition-colors">Estética e Bem-Estar</h3>
+                        <div class="space-y-8">
                             <div>
-                                <h4 class="text-[10px] font-bold text-white/40 uppercase tracking-widest mb-3 flex items-center gap-2">
-                                    <span class="w-1.5 h-1.5 bg-brand-blue/40 rounded-full"></span>Tratamentos Corporais
+                                <h4 class="text-xs font-bold text-brand-blue/60 uppercase tracking-widest mb-4 flex items-center gap-2">
+                                    <span class="w-2 h-2 bg-brand-blue rounded-full shadow-[0_0_8px_rgba(0,191,255,0.5)]"></span>Tratamentos Corporais
                                 </h4>
-                                <ul class="space-y-1.5 pl-3.5">
-                                    <li class="text-[11px] text-white/50 border-l border-white/5 pl-3 transition-colors hover:text-brand-blue hover:border-brand-blue/30">Massagem modeladora</li>
-                                    <li class="text-[11px] text-white/50 border-l border-white/5 pl-3 transition-colors hover:text-brand-blue hover:border-brand-blue/30">Drenagem linfática</li>
-                                    <li class="text-[11px] text-white/50 border-l border-white/5 pl-3 transition-colors hover:text-brand-blue hover:border-brand-blue/30">Carboxiterapia</li>
-                                    <li class="text-[11px] text-white/50 border-l border-white/5 pl-3 transition-colors hover:text-brand-blue hover:border-brand-blue/30">Radiofrequência</li>
-                                    <li class="text-[11px] text-white/50 border-l border-white/5 pl-3 transition-colors hover:text-brand-blue hover:border-brand-blue/30">Criolipólise</li>
-                                    <li class="text-[11px] text-white/50 border-l border-white/5 pl-3 transition-colors hover:text-brand-blue hover:border-brand-blue/30">Tratamento com enzimas</li>
-                                    <li class="text-[11px] text-white/50 border-l border-white/5 pl-3 transition-colors hover:text-brand-blue hover:border-brand-blue/30">Lipo de papada</li>
+                                <ul class="space-y-3 pl-4 border-l border-white/10">
+                                    <li class="text-sm text-gray-400 font-medium hover:text-white transition-colors cursor-default">Massagem modeladora</li>
+                                    <li class="text-sm text-gray-400 font-medium hover:text-white transition-colors cursor-default">Drenagem linfática</li>
+                                    <li class="text-sm text-gray-400 font-medium hover:text-white transition-colors cursor-default">Carboxiterapia</li>
+                                    <li class="text-sm text-gray-400 font-medium hover:text-white transition-colors cursor-default">Radiofrequência</li>
+                                    <li class="text-sm text-gray-400 font-medium hover:text-white transition-colors cursor-default">Criolipólise</li>
+                                    <li class="text-sm text-gray-400 font-medium hover:text-white transition-colors cursor-default">Tratamento com enzimas</li>
+                                    <li class="text-sm text-gray-400 font-medium hover:text-white transition-colors cursor-default">Lipo de papada</li>
                                 </ul>
                             </div>
                             <div>
-                                <h4 class="text-[10px] font-bold text-white/40 uppercase tracking-widest mb-3 flex items-center gap-2">
-                                    <span class="w-1.5 h-1.5 bg-brand-blue/40 rounded-full"></span>Tratamentos Faciais
+                                <h4 class="text-xs font-bold text-brand-blue/60 uppercase tracking-widest mb-4 flex items-center gap-2">
+                                    <span class="w-2 h-2 bg-brand-blue rounded-full shadow-[0_0_8px_rgba(0,191,255,0.5)]"></span>Tratamentos Faciais
                                 </h4>
-                                <ul class="space-y-1.5 pl-3.5">
-                                    <li class="text-[11px] text-white/50 border-l border-white/5 pl-3 transition-colors hover:text-brand-blue hover:border-brand-blue/30">Limpeza de pele</li>
-                                    <li class="text-[11px] text-white/50 border-l border-white/5 pl-3 transition-colors hover:text-brand-blue hover:border-brand-blue/30">Hidratação facial</li>
-                                    <li class="text-[11px] text-white/50 border-l border-white/5 pl-3 transition-colors hover:text-brand-blue hover:border-brand-blue/30">Peelings</li>
-                                    <li class="text-[11px] text-white/50 border-l border-white/5 pl-3 transition-colors hover:text-brand-blue hover:border-brand-blue/30">Microagulhamento</li>
-                                    <li class="text-[11px] text-white/50 border-l border-white/5 pl-3 transition-colors hover:text-brand-blue hover:border-brand-blue/30">Jato de plasma</li>
+                                <ul class="space-y-3 pl-4 border-l border-white/10">
+                                    <li class="text-sm text-gray-400 font-medium hover:text-white transition-colors cursor-default">Limpeza de pele</li>
+                                    <li class="text-sm text-gray-400 font-medium hover:text-white transition-colors cursor-default">Hidratação facial</li>
+                                    <li class="text-sm text-gray-400 font-medium hover:text-white transition-colors cursor-default">Peelings</li>
+                                    <li class="text-sm text-gray-400 font-medium hover:text-white transition-colors cursor-default">Microagulhamento</li>
+                                    <li class="text-sm text-gray-400 font-medium hover:text-white transition-colors cursor-default">Jato de plasma</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
 
                     <!-- Category 2 -->
-                    <div class="reveal glass p-8 border border-white/5 flex flex-col h-full hover:neon-border transition-all group">
-                        <h3 class="text-xs font-black uppercase tracking-[0.2em] text-brand-blue mb-6">Biomedicina Estética</h3>
-                        <ul class="space-y-2">
-                            <li class="text-[11px] text-white/60 flex items-center gap-3"><span class="w-1 h-1 bg-brand-blue/30"></span>Preenchimento labial</li>
-                            <li class="text-[11px] text-white/60 flex items-center gap-3"><span class="w-1 h-1 bg-brand-blue/30"></span>Harmonização facial</li>
-                            <li class="text-[11px] text-white/60 flex items-center gap-3"><span class="w-1 h-1 bg-brand-blue/30"></span>Toxina botulínica (Botox)</li>
-                            <li class="text-[11px] text-white/60 flex items-center gap-3"><span class="w-1 h-1 bg-brand-blue/30"></span>Bioestimulador de colágeno</li>
-                            <li class="text-[11px] text-white/60 flex items-center gap-3"><span class="w-1 h-1 bg-brand-blue/30"></span>Skinbooster facial</li>
-                            <li class="text-[11px] text-white/60 flex items-center gap-3"><span class="w-1 h-1 bg-brand-blue/30"></span>Endolaser</li>
-                            <li class="text-[11px] text-white/60 flex items-center gap-3"><span class="w-1 h-1 bg-brand-blue/30"></span>Aplicações de vitaminas</li>
+                    <div class="reveal glass p-10 border border-white/10 flex flex-col h-full hover:bg-white/[0.07] transition-all group shadow-xl">
+                        <div class="mb-6 text-brand-blue">
+                            <i data-lucide="microscope" class="w-8 h-8 opacity-50 group-hover:opacity-100 transition-opacity"></i>
+                        </div>
+                        <h3 class="text-lg font-black uppercase tracking-tight text-white mb-6 group-hover:text-brand-blue transition-colors">Biomedicina Estética</h3>
+                        <ul class="space-y-4 pl-4 border-l border-white/10">
+                            <li class="text-sm text-gray-400 font-medium hover:text-white transition-colors cursor-default">Preenchimento labial</li>
+                            <li class="text-sm text-gray-400 font-medium hover:text-white transition-colors cursor-default">Harmonização facial</li>
+                            <li class="text-sm text-gray-400 font-medium hover:text-white transition-colors cursor-default">Toxina botulínica (Botox)</li>
+                            <li class="text-sm text-gray-400 font-medium hover:text-white transition-colors cursor-default">Bioestimulador de colágeno</li>
+                            <li class="text-sm text-gray-400 font-medium hover:text-white transition-colors cursor-default">Skinbooster facial</li>
+                            <li class="text-sm text-gray-400 font-medium hover:text-white transition-colors cursor-default">Endolaser</li>
+                            <li class="text-sm text-gray-400 font-medium hover:text-white transition-colors cursor-default">Aplicações de vitaminas</li>
                         </ul>
                     </div>
 
                     <!-- Category 3 -->
-                    <div class="reveal glass p-8 border border-white/5 flex flex-col h-full hover:neon-border transition-all group">
-                        <h3 class="text-xs font-black uppercase tracking-[0.2em] text-brand-blue mb-6">Fisioterapia e Reabilitação</h3>
-                        <ul class="space-y-2">
-                            <li class="text-[11px] text-white/60 flex items-center gap-3"><span class="w-1 h-1 bg-brand-blue/30"></span>Liberação miofascial</li>
-                            <li class="text-[11px] text-white/60 flex items-center gap-3"><span class="w-1 h-1 bg-brand-blue/30"></span>Quiropraxia</li>
-                            <li class="text-[11px] text-white/60 flex items-center gap-3"><span class="w-1 h-1 bg-brand-blue/30"></span>Reabilitação física</li>
+                    <div class="reveal glass p-10 border border-white/10 flex flex-col h-full hover:bg-white/[0.07] transition-all group shadow-xl">
+                        <div class="mb-6 text-brand-blue">
+                            <i data-lucide="accessibility" class="w-8 h-8 opacity-50 group-hover:opacity-100 transition-opacity"></i>
+                        </div>
+                        <h3 class="text-lg font-black uppercase tracking-tight text-white mb-6 group-hover:text-brand-blue transition-colors">Fisioterapia e Reabilitação</h3>
+                        <ul class="space-y-4 pl-4 border-l border-white/10">
+                            <li class="text-sm text-gray-400 font-medium hover:text-white transition-colors cursor-default">Liberação miofascial</li>
+                            <li class="text-sm text-gray-400 font-medium hover:text-white transition-colors cursor-default">Quiropraxia</li>
+                            <li class="text-sm text-gray-400 font-medium hover:text-white transition-colors cursor-default">Reabilitação física</li>
                         </ul>
                     </div>
 
                     <!-- Category 4 -->
-                    <div class="reveal glass p-8 border border-white/5 flex flex-col h-full hover:neon-border transition-all group">
-                        <h3 class="text-xs font-black uppercase tracking-[0.2em] text-brand-blue mb-6">Beleza e Cuidados Pessoais</h3>
-                        <ul class="space-y-2">
-                            <li class="text-[11px] text-white/60 flex items-center gap-3"><span class="w-1 h-1 bg-brand-blue/30"></span>Design de sobrancelhas</li>
-                            <li class="text-[11px] text-white/60 flex items-center gap-3"><span class="w-1 h-1 bg-brand-blue/30"></span>Depilação com fio</li>
-                            <li class="text-[11px] text-white/60 flex items-center gap-3"><span class="w-1 h-1 bg-brand-blue/30"></span>Micropigmentação labial</li>
-                            <li class="text-[11px] text-white/60 flex items-center gap-3"><span class="w-1 h-1 bg-brand-blue/30"></span>Micropigmentação fio a fio</li>
-                            <li class="text-[11px] text-white/60 flex items-center gap-3"><span class="w-1 h-1 bg-brand-blue/30"></span>Manicure e pedicure</li>
+                    <div class="reveal glass p-10 border border-white/10 flex flex-col h-full hover:bg-white/[0.07] transition-all group shadow-xl">
+                        <div class="mb-6 text-brand-blue">
+                            <i data-lucide="scissors" class="w-8 h-8 opacity-50 group-hover:opacity-100 transition-opacity"></i>
+                        </div>
+                        <h3 class="text-lg font-black uppercase tracking-tight text-white mb-6 group-hover:text-brand-blue transition-colors">Beleza e Cuidados Pessoais</h3>
+                        <ul class="space-y-4 pl-4 border-l border-white/10">
+                            <li class="text-sm text-gray-400 font-medium hover:text-white transition-colors cursor-default">Design de sobrancelhas</li>
+                            <li class="text-sm text-gray-400 font-medium hover:text-white transition-colors cursor-default">Depilação com fio</li>
+                            <li class="text-sm text-gray-400 font-medium hover:text-white transition-colors cursor-default">Micropigmentação labial</li>
+                            <li class="text-sm text-gray-400 font-medium hover:text-white transition-colors cursor-default">Micropigmentação fio a fio</li>
+                            <li class="text-sm text-gray-400 font-medium hover:text-white transition-colors cursor-default">Manicure e pedicure</li>
                         </ul>
                     </div>
 
                     <!-- Category 5 -->
-                    <div class="reveal glass p-8 border border-white/5 flex flex-col h-full hover:neon-border transition-all group">
-                        <h3 class="text-xs font-black uppercase tracking-[0.2em] text-brand-blue mb-6">Protocolos Personalizados</h3>
-                        <ul class="space-y-2">
-                            <li class="text-[11px] text-white/60 flex items-center gap-3"><span class="w-1 h-1 bg-brand-blue/30"></span>Emagrecimento</li>
-                            <li class="text-[11px] text-white/60 flex items-center gap-3"><span class="w-1 h-1 bg-brand-blue/30"></span>Tratamento de lipedema</li>
-                            <li class="text-[11px] text-white/60 flex items-center gap-3"><span class="w-1 h-1 bg-brand-blue/30"></span>Redução de linhas</li>
-                            <li class="text-[11px] text-white/60 flex items-center gap-3"><span class="w-1 h-1 bg-brand-blue/30"></span>Flacidez</li>
-                            <li class="text-[11px] text-white/60 flex items-center gap-3"><span class="w-1 h-1 bg-brand-blue/30"></span>Gordura localizada</li>
+                    <div class="reveal glass p-10 border border-white/10 flex flex-col h-full hover:bg-white/[0.07] transition-all group shadow-xl">
+                        <div class="mb-6 text-brand-blue">
+                            <i data-lucide="activity" class="w-8 h-8 opacity-50 group-hover:opacity-100 transition-opacity"></i>
+                        </div>
+                        <h3 class="text-lg font-black uppercase tracking-tight text-white mb-6 group-hover:text-brand-blue transition-colors">Protocolos Personalizados</h3>
+                        <ul class="space-y-4 pl-4 border-l border-white/10">
+                            <li class="text-sm text-gray-400 font-medium hover:text-white transition-colors cursor-default">Emagrecimento</li>
+                            <li class="text-sm text-gray-400 font-medium hover:text-white transition-colors cursor-default">Tratamento de lipedema</li>
+                            <li class="text-sm text-gray-400 font-medium hover:text-white transition-colors cursor-default">Redução de linhas</li>
+                            <li class="text-sm text-gray-400 font-medium hover:text-white transition-colors cursor-default">Flacidez</li>
+                            <li class="text-sm text-gray-400 font-medium hover:text-white transition-colors cursor-default">Gordura localizada</li>
                         </ul>
                     </div>
 
                     <!-- Specialty Card -->
-                    <div class="reveal glass p-8 border border-brand-blue/20 bg-brand-blue/5 flex flex-col justify-center items-center text-center space-y-4">
-                        <h3 class="text-xs font-black uppercase tracking-widest text-[#00BFFF]">Ortopedia & Outros</h3>
-                        <p class="text-[11px] text-white/50 px-4">Psicologia, Psicanálise e Consultas Nutricionais Especializadas.</p>
-                        <div class="w-12 h-[1px] bg-brand-blue/30"></div>
-                        <p class="text-[10px] uppercase font-bold tracking-tighter">Atendimento Multidisciplinar</p>
+                    <div class="reveal glass p-10 border border-brand-blue/30 bg-brand-blue/5 flex flex-col justify-center items-center text-center space-y-6 shadow-2xl">
+                        <h3 class="text-lg font-black uppercase tracking-tight text-brand-blue">Ortopedia & Outros</h3>
+                        <p class="text-sm text-white/50 px-4 leading-relaxed font-medium">Psicologia, Psicanálise e Consultas Nutricionais Especializadas.</p>
+                        <div class="w-16 h-[1px] bg-brand-blue/30"></div>
+                        <div class="flex flex-col items-center">
+                            <p class="text-[10px] uppercase font-bold tracking-[0.2em] text-brand-blue/70">Atendimento Multidisciplinar</p>
+                            <a href="https://wa.me/+554733991989" target="_blank" rel="noopener noreferrer" class="mt-6 btn-outline-neon px-8 py-3 w-full">Agendar Consulta</a>
+                        </div>
                     </div>
+                </div>
+
+                <div class="mt-20 flex justify-center reveal">
+                    <a href="https://wa.me/+554733991989" target="_blank" rel="noopener noreferrer" class="btn-neon px-20">
+                        VER TODOS OS SERVIÇOS
+                    </a>
                 </div>
             </div>
         </section>
