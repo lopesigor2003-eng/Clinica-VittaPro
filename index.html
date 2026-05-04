@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clínica VittaPro | Um Novo Padrão de Cuidado</title>
-    <link rel="icon" href="vittapro.png" type="image/png">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -123,10 +122,24 @@
                 <a href="#contato" class="text-[10px] font-bold uppercase tracking-[0.25em] text-white/50 hover:text-brand-blue transition-colors">Contato</a>
                 <a href="https://wa.me/+554733991989" target="_blank" rel="noopener noreferrer" class="btn-outline-neon">Agendar</a>
             </div>
-            <!-- Mobile Menu Toggle (Simplified for static) -->
-            <button class="lg:hidden text-white/50 hover:text-brand-blue">
+            <!-- Mobile Menu Toggle -->
+            <button id="mobile-menu-toggle" class="lg:hidden text-white/50 hover:text-brand-blue transition-colors">
                 <i data-lucide="menu" class="w-6 h-6"></i>
             </button>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="fixed inset-0 bg-brand-dark/95 z-[60] flex flex-col items-center justify-center gap-8 translate-x-full transition-transform duration-500 lg:hidden">
+            <button id="mobile-menu-close" class="absolute top-6 right-6 text-white/50 hover:text-brand-blue transition-colors">
+                <i data-lucide="x" class="w-8 h-8"></i>
+            </button>
+            <a href="#inicio" class="mobile-link text-lg font-bold uppercase tracking-[0.25em] text-white hover:text-brand-blue transition-colors">Início</a>
+            <a href="#a-clinica" class="mobile-link text-lg font-bold uppercase tracking-[0.25em] text-white hover:text-brand-blue transition-colors">A Clínica</a>
+            <a href="#servicos" class="mobile-link text-lg font-bold uppercase tracking-[0.25em] text-white hover:text-brand-blue transition-colors">Serviços</a>
+            <a href="#equipe" class="mobile-link text-lg font-bold uppercase tracking-[0.25em] text-white hover:text-brand-blue transition-colors">Equipe</a>
+            <a href="#depoimentos" class="mobile-link text-lg font-bold uppercase tracking-[0.25em] text-white hover:text-brand-blue transition-colors">Depoimentos</a>
+            <a href="#contato" class="mobile-link text-lg font-bold uppercase tracking-[0.25em] text-white hover:text-brand-blue transition-colors">Contato</a>
+            <a href="https://wa.me/+554733991989" target="_blank" rel="noopener noreferrer" class="btn-outline-neon py-4 px-12">Agendar</a>
         </div>
     </nav>
 
@@ -273,6 +286,11 @@
                                 </ul>
                             </div>
                         </div>
+                        <div class="mt-auto pt-8">
+                            <a href="https://wa.link/j7mru0" target="_blank" rel="noopener noreferrer" class="btn-outline-neon w-full flex justify-center text-[10px]">
+                                Agendar Consulta
+                            </a>
+                        </div>
                     </div>
 
                     <!-- Category 2 -->
@@ -290,6 +308,11 @@
                             <li class="text-sm text-gray-400 font-medium hover:text-white transition-colors cursor-default">Endolaser</li>
                             <li class="text-sm text-gray-400 font-medium hover:text-white transition-colors cursor-default">Aplicações de vitaminas</li>
                         </ul>
+                        <div class="mt-auto pt-8">
+                            <a href="https://wa.link/a6d3xr" target="_blank" rel="noopener noreferrer" class="btn-outline-neon w-full flex justify-center text-[10px]">
+                                Agendar Consulta
+                            </a>
+                        </div>
                     </div>
 
                     <!-- Category 3 -->
@@ -303,6 +326,11 @@
                             <li class="text-sm text-gray-400 font-medium hover:text-white transition-colors cursor-default">Quiropraxia</li>
                             <li class="text-sm text-gray-400 font-medium hover:text-white transition-colors cursor-default">Reabilitação física</li>
                         </ul>
+                        <div class="mt-auto pt-8">
+                            <a href="https://wa.link/vwomac" target="_blank" rel="noopener noreferrer" class="btn-outline-neon w-full flex justify-center text-[10px]">
+                                Agendar Consulta
+                            </a>
+                        </div>
                     </div>
 
                     <!-- Category 4 -->
@@ -318,6 +346,11 @@
                             <li class="text-sm text-gray-400 font-medium hover:text-white transition-colors cursor-default">Micropigmentação fio a fio</li>
                             <li class="text-sm text-gray-400 font-medium hover:text-white transition-colors cursor-default">Manicure e pedicure</li>
                         </ul>
+                        <div class="mt-auto pt-8">
+                            <a href="https://wa.link/14rdjq" target="_blank" rel="noopener noreferrer" class="btn-outline-neon w-full flex justify-center text-[10px]">
+                                Agendar Consulta
+                            </a>
+                        </div>
                     </div>
 
                     <!-- Category 5 -->
@@ -333,6 +366,11 @@
                             <li class="text-sm text-gray-400 font-medium hover:text-white transition-colors cursor-default">Flacidez</li>
                             <li class="text-sm text-gray-400 font-medium hover:text-white transition-colors cursor-default">Gordura localizada</li>
                         </ul>
+                        <div class="mt-auto pt-8">
+                            <a href="https://wa.link/16jntf" target="_blank" rel="noopener noreferrer" class="btn-outline-neon w-full flex justify-center text-[10px]">
+                                Agendar Consulta
+                            </a>
+                        </div>
                     </div>
 
                     <!-- Specialty Card -->
@@ -342,7 +380,7 @@
                         <div class="w-16 h-[1px] bg-brand-blue/30"></div>
                         <div class="flex flex-col items-center">
                             <p class="text-[10px] uppercase font-bold tracking-[0.2em] text-brand-blue/70">Atendimento Multidisciplinar</p>
-                            <a href="https://wa.me/+554733991989" target="_blank" rel="noopener noreferrer" class="mt-6 btn-outline-neon px-8 py-3 w-full">Agendar Consulta</a>
+                            <a href="https://wa.link/hyjrel" target="_blank" rel="noopener noreferrer" class="mt-6 btn-outline-neon px-8 py-3 w-full">Agendar Consulta</a>
                         </div>
                     </div>
                 </div>
@@ -395,7 +433,7 @@
 
                         <div class="relative w-full group">
                             <div class="relative overflow-hidden glass border-white/10 shadow-2xl aspect-[4/5] sm:aspect-square lg:aspect-[4/5] flex items-center justify-center">
-                                <img id="space-image" src="https://i.postimg.cc/g2S8L3HT/Whats-App-Image-2026-04-28-at-17-21-47.jpg" alt="Interior da Clínica" class="w-full h-full object-cover">
+                                <img id="space-image" src="https://i.postimg.cc/GtT6gYBf/Whats-App-Image-2026-04-30-at-20-32-58.jpg" alt="Interior da Clínica" class="w-full h-full object-cover">
                             </div>
 
                             <button id="prev-space" class="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 md:w-10 md:h-10 glass border-white/20 flex items-center justify-center text-brand-blue hover:neon-border transition-all opacity-0 group-hover:opacity-100 z-10">
@@ -578,10 +616,15 @@
         ];
 
         const spaceImages = [
-            'https://i.postimg.cc/g2S8L3HT/Whats-App-Image-2026-04-28-at-17-21-47.jpg',
-            'https://i.postimg.cc/t4SWnFNB/Whats-App-Image-2026-04-28-at-17-21-46.jpg',
-            'https://i.postimg.cc/HkZX8b9B/Whats-App-Image-2026-04-28-at-17-21-46-(1).jpg',
-            'https://i.postimg.cc/g2S8L3HB/Whats-App-Image-2026-04-28-at-17-21-47-(2).jpg',
+            'https://i.postimg.cc/GtT6gYBf/Whats-App-Image-2026-04-30-at-20-32-58.jpg',
+            'https://i.postimg.cc/gJTfK402/Whats-App-Image-2026-04-30-at-20-32-58-(1).jpg',
+            'https://i.postimg.cc/MTFhYtGH/Whats-App-Image-2026-04-30-at-20-32-58-(2).jpg',
+            'https://i.postimg.cc/xC4WPgdT/Whats-App-Image-2026-04-30-at-20-32-58-(3).jpg',
+            'https://i.postimg.cc/Hxhft3LW/Whats-App-Image-2026-04-30-at-20-32-58-(4).jpg',
+            'https://i.postimg.cc/zBc9kpfK/Whats-App-Image-2026-04-30-at-20-32-58-(5).jpg',
+            'https://i.postimg.cc/RFDjTG0G/Whats-App-Image-2026-04-30-at-20-32-58-(6).jpg',
+            'https://i.postimg.cc/Tw4ZcQPC/Whats-App-Image-2026-04-30-at-20-32-58-(7).jpg',
+            'https://i.postimg.cc/8cfxXWFb/Whats-App-Image-2026-04-30-at-20-32-58-(8).jpg',
         ];
 
         function createCarousel(imgArray, imgElementId, prevBtnId, nextBtnId, indicatorsId) {
@@ -644,6 +687,27 @@
             }
             reveal();
         };
+
+        // Mobile Menu Logic
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileToggle = document.getElementById('mobile-menu-toggle');
+        const mobileClose = document.getElementById('mobile-menu-close');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('translate-x-full');
+            document.body.style.overflow = mobileMenu.classList.contains('translate-x-full') ? '' : 'hidden';
+        }
+
+        mobileToggle.onclick = toggleMenu;
+        mobileClose.onclick = toggleMenu;
+
+        mobileLinks.forEach(link => {
+            link.onclick = () => {
+                mobileMenu.classList.add('translate-x-full');
+                document.body.style.overflow = '';
+            };
+        });
 
         // Scroll reveal logic
         function reveal() {
